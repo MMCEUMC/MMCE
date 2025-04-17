@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ajuda</title>
+  <link rel="stylesheet" href="../static/css/global.css">
+  <link rel="stylesheet" href="../static/css/header.css">
+  <link rel="stylesheet" href="../static/css/ajuda.css">
+</head>
+
+<body>
+  <header>
+    <div class="title_container">
+      <h1>CÁLCULO DE EXERGIA EM MOTORES A COMBUSTÃO</h1>
+    </div>
+
+    <nav class="nav_container">
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a class="link" href="{{ url_for('simulador') }}">Simulador</a>
+        </li>
+        <li class="nav_item">
+          <a class="link" href="{{ url_for('teoria') }}">Teoria</a>
+        </li>
+        <li class="nav_item">
+          <a class="link selected" href="{{ url_for('ajuda') }}">Ajuda</a>
+        </li>
+        <li class="nav_item">
+          <a class="link" href="{{ url_for('autores') }}">Autores</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main_container">
+    <div class="text-placeholder">
+      Essa página será dedicada para a ajuda de como utilizar o simulador.
+    </div>
+  </main>
+</body>
+
+</html>
