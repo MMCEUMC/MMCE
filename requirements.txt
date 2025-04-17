@@ -1,5 +1,4 @@
 Flask
 matplotlib
 numpy
-math
 scipy
