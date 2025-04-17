@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Teoria</title>
+  <link rel="stylesheet" href="../static/css/global.css">
+  <link rel="stylesheet" href="../static/css/header.css">
+  <link rel="stylesheet" href="../static/css/teoria.css">
+</head>
+
+<body>
+  <header>
+    <div class="title_container">
+      <h1>CÁLCULO DE EXERGIA EM MOTORES A COMBUSTÃO</h1>
+    </div>
+
+    <nav class="nav_container">
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a class="link" href="{{ url_for('simulador') }}">Simulador</a>
+        </li>
+        <li class="nav_item">
+          <a class="link selected" href="{{ url_for('teoria') }}">Teoria</a>
+        </li>
+        <li class="nav_item">
+          <a class="link" href="{{ url_for('ajuda') }}">Ajuda</a>
+        </li>
+        <li class="nav_item">
+          <a class="link" href="{{ url_for('autores') }}">Autores</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main_container">
+    <p class="text">
+      O motor de combustão interna é uma máquina térmica que possui a finalidade de converter energia termoquímica em
+      energia mecânica. O funcionamento desse tipo de motor é baseado na queima de um combustível dentro de um cilindro.
+      Diante deste tema que abrange processos termodinâmicos, ou seja, variações de volume, pressão e transformações de
+      energia, a exergia está envolvida em todo o processo. Exergia, também chamada de disponibilidade, máximo trabalho
+      disponível, ou energia organizada, é uma medida termodinâmica que representa a quantidade de energia em um sistema
+      que pode ser convertida em trabalho útil. A utilização desta energia organizada pode ajudar na identificação de
+      perdas de energia em sistemas e processos, permitindo que sejam feitas melhorias para aumentar a eficiência e
+      reduzir o custo.
+
+      O motor converte a energia termoquímica da combustão feita na câmara interna em energia mecânica, para que possam
+      movimentar os outros componentes adicionais que integram o motor. O ar é admitido para dentro do cilindro. Em
+      seguida, é comprimido através do movimento de subida do pistão. Desta forma, o Diesel é injetado para dentro do
+      cilindro. Pelas condições elevadas de pressão do ar comprimido, o diesel é queimado (combustão). Em seguida, todos
+      os gases provenientes da combustão são liberados, através da abertura das válvulas de escape, formando um ciclo de
+      4 tempos.
+    </p>
+    <span>Para mais informações, acesso o documento em PDF</span>
+    <a href="../static/assets/RELATORIOFINAL.pdf" download class="download_button"> Documento para download em PDF</a>
+  </main>
+</body>
+
+</html>
