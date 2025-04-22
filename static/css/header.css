@@ -1,0 +1,46 @@
+header{
+    width: 100%;
+}
+
+header .title_container{
+    width: 100%;
+    padding: .6em;
+    text-align: center;
+
+    border-bottom: 2px solid #000;
+}
+
+header .title_container h1{
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+header .nav_cotainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .2em;
+}
+
+header .nav_list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    
+    width: 100%;
+    max-width: 640px;
+}
+
+header .nav_item{
+    list-style-type: none;
+}
+header .nav_item .link{
+    text-decoration: none;
+    color: #000;
+}
+
+header .nav_item .link.selected{
+    color: #007fff;
+}
+

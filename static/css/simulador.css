@@ -1,0 +1,101 @@
+.main_container{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 0.95fr auto;
+    grid-template-areas: 
+        'form img'
+        'text text';
+
+    height: 100%;
+}
+
+.form_container{
+    grid-area: form;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.form_title{
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+}
+
+.form .field_group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.form .field_group .field_title{
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+}
+
+.form .fields_container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: .3em 1em;
+
+    width: 100%;
+}
+.form .field_group.parameters .fields_container{
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.form .field_group .fields_container .field{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.form .field .label{
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+}
+.form .field input{
+    width: 90%;
+    font-size: 15px;
+    padding: 0 .5em;
+}
+
+.form .fields_container.buttons{
+    margin-top: 1em;
+}
+.form .fields_container.buttons button{
+    padding: .2em 0;
+    border-radius: .4em;
+    border: none;
+    font-size: 15px;
+}
+
+.image_container{
+    grid-area: img;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 0em;
+    height: 90%;
+    width: 100%;
+
+    overflow: hidden;
+}
+.image_container img{
+    display: flex;
+    height: 90%;
+}
+
+.text_container{
+    grid-area: text;
+    
+    font-size: 16px;
+    color: #fff;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/simulador.css') }}">
+</head>
+
+<body>
+  <header>
+    <div class="title_container">
+      <h1>CÁLCULO DE EXERGIA EM MOTORES A COMBUSTÃO</h1>
+    </div>
+
+    <nav class="nav_container">
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a class="link selected" href="{{ url_for('simulador') }}">Simulador</a>
+        </li>
+        <li class="nav_item">
+          <a class="link" href="{{ url_for('teoria') }}">Teoria</a>
+        </li>
+        <li class="nav_item">
+          <a class="link" href="{{ url_for('ajuda') }}">Ajuda</a>
+        </li>
+        <li class="nav_item">
+          <a class="link" href="{{ url_for('autores') }}">Autores</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main_container">
+    <div class="form_container">
+      <form class="form" method="POST" action="/simular">
+        <h2 class="form_title">Tempo de Simulação</h2>
+
+        <div class="field_group time">
+          <div class="fields_container">
+            <div class="field">
+              <label class='label'>Tempo do Ciclo:</label>
+              <input type="text" name="tempo" value="0.0428">
+            </div>
+            <div class="field">
+              <label class='label'>Step:</label>
+              <input type="text" name="step" value="0.00001">
+            </div>
+          </div>
+        </div>
+
+        <div class="field_group parameters">
+          <div class="title_container">
+            <h3 class="field_title">Parâmetros</h3>
+          </div>
+
+          <div class="fields_container">
+            <div class="field">
+              <label class='label'>Diâmetro do cilindro (mm)</label>
+              <input type="text" name="diametro" value="97.5">
+            </div>
+            <div class="field">
+              <label class='label'>Altura do cilindro (m)</label>
+              <input type="text" name="altura" value="0.133">
+            </div>
+            <div class="field">
+              <label class='label'>Volume (cm³)</label>
+              <input type="text" name="volume" value="5958">
+            </div>
+            <div class="field">
+              <label class='label'>Número de cilindros</label>
+              <input type="text" name="num_cilindros" value="6">
+            </div>
+            <div class="field">
+              <label class='label'>Razão entre pessões</label>
+              <input type="text" name="taxa_comp" value="18">
+            </div>
+            <div class="field">
+              <label class='label'>Pressão de entrada (bar)</label>
+              <input type="text" name="pressao_entrada" value="2.1">
+            </div>
+            <div class="field">
+              <label class='label'>Temperatura de entrada (K)</label>
+              <input type="text" name="temperatura_entrada" value="313">
+            </div>
+            <div class="field">
+              <label class='label'>Rotações (rps)</label>
+              <input type="text" name="rotacao" value="13.33">
+            </div>
+          </div>
+        </div>
+
+        <div class="fields_container buttons">
+          <button type="submit">Simular</button>
+          <button type="reset">Reset</button>
+        </div>
+
+      </form>
+    </div>
+    <div class="image_container">
+      <img src="../static/assets/cilindros.png" alt="IMAGEM DOS TEMPOS DE UM MOTOR QUATRO TEMPOS">
+    </div>
+
+    {% if plot %}
+      <h2>Gráfico gerado:</h2>
+      <img src="data:image/png;base64,{{ plot }}" alt="Gráfico gerado">
+    {% endif %}
+
+
+    <div class="text_container">
+      <p>Na imagem anterior, podemos ver um motor a Diesel de 4 tempos. Primeirarnente as válvulas de admissão se abrem,
+        fazendo com que o ar entre no cilindro. Em seguida, as válvulas se fecham e este ar é comprimido, com os pistão
+        subindo. O diesel é injetado no cilindro, e, devido a alta pressão e temperatura, entra em combustão, empurrando
+        o pistão para baixo, Assim, as välvulas de escape se abrem e o pistão sobe novamente, fazendo com que os gases
+        da combustão saiam do cilindro, Esta etapa da Modelagem Matemática foi realizada para cada ciclo do
+        funcionamento do motor a Diesel e, no final, é possivel visualizar a massa de ar, temperatura, entropia e
+        exergia em função do tempo. A utilização da exergia pode ajudar na identificação de perdas de energia em
+        sistemas e processos, permitindo que sejam realizadas melhorias para aumentar a eficiência e reduzir o custo
+        (MORAN-SHAPIRO et al., 2018). A exergia pode ser definida como uma medida termodinâmica que representa a
+        quantidade de energia em um sistema que pode ser convertida em trabalho útil (LEVENSPIEL, 2002).</p>
+    </div>
+  </main>
+
+</body>
+
+</html>
