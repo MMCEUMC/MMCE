@@ -35,7 +35,7 @@ def simular():
       # Pegando dados do formulário
       tempo = float(request.form['tempo'])
       step = float(request.form['step'])
-      diametro = float(request.form['diametro']) * 1000  # Converter para mm
+      diametro = float(request.form['diametro']) 
       curso = float(request.form['altura'])
       cilindrada_total = float(request.form['volume'])
       num_cilindros = int(request.form['num_cilindros'])
